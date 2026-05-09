@@ -215,7 +215,7 @@ def main():
     # Check if running as root
     out, _ = run("id -u")
     if out.strip() != "0":
-        fail("Please run as root: sudo python3 pi_bridge_fix.py")
+        fail("Please run as root: sudo python3 scripts/troubleshoot.py")
         sys.exit(1)
 
     results = {}
@@ -269,7 +269,7 @@ def main():
     except KeyboardInterrupt:
         print()
 
-    print(f"\n{BLUE}Done! Run this script anytime with: sudo python3 pi_bridge_fix.py{RESET}\n")
+    print(f"\n{BLUE}Done! Run this script anytime with: sudo python3 scripts/troubleshoot.py{RESET}\n")
 
 if __name__ == "__main__":
     main()

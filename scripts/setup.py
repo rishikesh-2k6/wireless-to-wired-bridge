@@ -3,7 +3,7 @@
 ╔══════════════════════════════════════════════════════╗
 ║   Raspberry Pi Wi-Fi to Ethernet Bridge              ║
 ║   One-Click Full Setup Script                        ║
-║   Just run: sudo python3 pi_bridge_setup.py          ║
+║   Just run: sudo python3 scripts/setup.py             ║
 ╚══════════════════════════════════════════════════════╝
 
 What this does:
@@ -102,7 +102,7 @@ def check_root():
     header("Step 1: Checking Permissions")
     if os.geteuid() != 0:
         fail("This script must be run as root!")
-        print(f"\n  Run: {BOLD}sudo python3 pi_bridge_setup.py{RESET}\n")
+        print(f"\n  Run: {BOLD}sudo python3 scripts/setup.py{RESET}\n")
         sys.exit(1)
     ok("Running as root")
 
@@ -424,7 +424,7 @@ def main():
   {GREEN}4.{RESET} Open YouTube, Netflix, Hotstar — enjoy! 🎬
 
   {BOLD}To troubleshoot anytime:{RESET}
-  {CYAN}sudo python3 pi_bridge_fix.py{RESET}
+  {CYAN}sudo python3 scripts/troubleshoot.py{RESET}
 
   {BOLD}This setup survives reboots automatically.{RESET}
   {BOLD}No HDMI or keyboard needed on Pi after this.{RESET}
@@ -432,7 +432,7 @@ def main():
     else:
         print(f"""  {YELLOW}{BOLD}⚠  Setup done but some checks failed.{RESET}
   {YELLOW}Try rebooting the Pi:{RESET} {BOLD}sudo reboot{RESET}
-  {YELLOW}Then run the troubleshooter:{RESET} {BOLD}sudo python3 pi_bridge_fix.py{RESET}
+  {YELLOW}Then run the troubleshooter:{RESET} {BOLD}sudo python3 scripts/troubleshoot.py{RESET}
 """)
 
     # Ask about reboot
