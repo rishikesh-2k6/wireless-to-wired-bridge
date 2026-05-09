@@ -30,6 +30,7 @@ Connect smart TVs, gaming consoles, PCs, or any device that needs a wired connec
 - [Features](#-features)
 - [Architecture](#-architecture)
 - [Prerequisites](#-prerequisites)
+- [Setting Up Your Raspberry Pi](#%EF%B8%8F-setting-up-your-raspberry-pi-first-time-setup)
 - [Quick Start](#-quick-start)
 - [Usage](#-usage)
 - [Project Structure](#-project-structure)
@@ -148,6 +149,79 @@ sudo python3 scripts/setup.py
 | **Cable** | Ethernet cable (Cat5e or better) |
 | **Python** | Python 3.7+ (pre-installed on Raspberry Pi OS) |
 | **Privileges** | Root access (`sudo`) |
+
+---
+
+## 🖥️ Setting Up Your Raspberry Pi (First-Time Setup)
+
+<details>
+<summary><strong>Already have Raspberry Pi OS installed and Wi-Fi connected? Skip to <a href="#-quick-start">Quick Start</a></strong></summary>
+
+&nbsp;
+</details>
+
+If you're starting from scratch, follow these steps to get your Pi up and running:
+
+### Step 1: Download Raspberry Pi Imager
+
+Download and install the official **Raspberry Pi Imager** on your laptop/PC:
+
+🔗 [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/)
+
+Available for Windows, macOS, and Linux.
+
+### Step 2: Flash Raspberry Pi OS to SD Card
+
+1. Insert a **microSD card** (16 GB or larger recommended) into your laptop/PC
+2. Open **Raspberry Pi Imager**
+3. Click **Choose Device** → Select **Raspberry Pi 4**
+4. Click **Choose OS** → Select **Raspberry Pi OS (64-bit)** *(Desktop version recommended)*
+5. Click **Choose Storage** → Select your microSD card
+6. Click **Next**, then click the **⚙️ Edit Settings** button — this is important:
+
+| Setting | What to Enter |
+|---------|---------------|
+| **Hostname** | `raspberrypi` (or any name you like) |
+| **Username** | Your preferred username (e.g., `pi`) |
+| **Password** | A strong password |
+| **Wi-Fi SSID** | Your home Wi-Fi network name |
+| **Wi-Fi Password** | Your Wi-Fi password |
+| **Wi-Fi Country** | Your country code (e.g., `IN`, `US`, `GB`) |
+| **Enable SSH** | ✅ Check this box (under the Services tab) |
+
+> 💡 **Pro tip:** Pre-configuring Wi-Fi and SSH here means you can run your Pi headlessly (no monitor/keyboard needed) from the very first boot.
+
+7. Click **Save** → **Yes** → **Yes** to start writing
+8. Wait for the flashing and verification to complete
+
+### Step 3: Boot the Raspberry Pi
+
+1. Remove the microSD card from your laptop
+2. Insert it into the Raspberry Pi's microSD slot
+3. Connect the **power cable** to the Pi
+4. Wait **60–90 seconds** for the first boot to complete
+
+### Step 4: Find Your Pi's IP Address
+
+From your laptop/PC, find the Pi on your network:
+
+```bash
+# Option A: Try the hostname (works on most networks)
+ping raspberrypi.local
+
+# Option B: Check your router's admin page for connected devices
+
+# Option C: Use a network scanner app (e.g., Fing on mobile)
+```
+
+### Step 5: Connect via SSH
+
+```bash
+ssh pi@<your-pi-ip>
+# Enter the password you set in Step 2
+```
+
+Once connected, your Pi is ready! Proceed to [Quick Start](#-quick-start) below.
 
 ---
 
