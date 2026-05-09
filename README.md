@@ -153,20 +153,31 @@ sudo python3 scripts/setup.py
 
 ## 🚀 Quick Start
 
-### 1. Clone the Repository
+> ⚠️ **All commands below must be run on your Raspberry Pi** — either via SSH or directly in the Pi's terminal. Do not run these on your laptop/PC.
+
+### 1. Open a Terminal on Your Raspberry Pi
+
+```bash
+# Option A: SSH into your Pi from another computer
+ssh pi@<your-pi-ip>
+
+# Option B: Open Terminal directly on the Pi (if monitor + keyboard connected)
+```
+
+### 2. Clone the Repository
 
 ```bash
 git clone https://github.com/rishikesh-2k6/wireless-to-wired-bridge.git
 cd wireless-to-wired-bridge
 ```
 
-### 2. Run the Setup Script
+### 3. Run the Setup Script
 
 ```bash
 sudo python3 scripts/setup.py
 ```
 
-### 3. Connect Your Device
+### 4. Connect Your Device
 
 ```
 Raspberry Pi [eth0] ──── Ethernet Cable ────► TV / PC / Console
